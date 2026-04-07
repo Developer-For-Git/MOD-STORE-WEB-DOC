@@ -1,0 +1,490 @@
+/* ============================================================
+   MOD STORE – Docs Page CSS  (walking stepper edition)
+   ============================================================ */
+
+/* ── Page layout ───────────────────────────────────────────── */
+.docs-page {
+  padding-top: var(--nav-height);
+  min-height: 100vh;
+}
+
+.docs-content {
+  max-width: 860px;
+  margin-inline: auto;
+  padding: var(--space-12) var(--space-8) var(--space-24);
+}
+
+@media (max-width: 768px) {
+  .docs-content { padding: var(--space-8) var(--space-5) var(--space-20); }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   WALKING STEPPER
+   Fixed to the right edge, vertically centered.
+   Structure:
+     .docs-stepper
+       .docs-stepper__rail  ← vertical line behind all dots
+         .docs-stepper__rail-fill  ← grows as user scrolls
+       .docs-stepper__list
+         .stepper-stop (×7)
+           .stepper-stop__dot
+           .stepper-stop__tooltip  ← appears on hover / active
+═══════════════════════════════════════════════════════════════ */
+.docs-stepper {
+  position: fixed;
+  right: 28px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 500;
+  /* width = label tooltip (hidden left) + dot */
+  display: block;
+}
+
+/* Vertical rail sits directly behind dot column */
+.docs-stepper__rail {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  /* horizontally align with center of dots – dots are 30px wide */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 2px;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.docs-stepper__rail-fill {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 0%;
+  background: linear-gradient(to bottom, var(--primary-light), var(--primary));
+  border-radius: 2px;
+  box-shadow: 0 0 8px var(--primary-glow);
+  transition: height 0.3s ease;
+}
+
+/* The list of stops */
+.docs-stepper__list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* One stop = one section */
+.stepper-stop {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  padding: 10px 0;
+  cursor: pointer;
+}
+
+/* The dot circle */
+.stepper-stop__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.15);
+  border: 2px solid rgba(255,255,255,0.12);
+  transition: width 0.35s cubic-bezier(0.34,1.56,0.64,1),
+              height 0.35s cubic-bezier(0.34,1.56,0.64,1),
+              background 0.3s ease,
+              border-color 0.3s ease,
+              box-shadow 0.3s ease;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 2;
+}
+
+/* Tooltip label – visible on hover and when active */
+.stepper-stop__tooltip {
+  position: absolute;
+  right: calc(100% + 14px);
+  top: 50%;
+  transform: translateY(-50%) translateX(6px);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.22s ease, transform 0.22s ease;
+  white-space: nowrap;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+}
+
+.stepper-stop__tooltip-group {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  line-height: 1;
+}
+
+.stepper-stop__tooltip-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  line-height: 1.2;
+  background: rgba(10,10,15,0.85);
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(8px);
+}
+
+/* ── Hover ── */
+.stepper-stop:hover .stepper-stop__tooltip {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+}
+
+.stepper-stop:hover .stepper-stop__dot {
+  width: 14px;
+  height: 14px;
+  background: rgba(220,20,60,0.5);
+  border-color: var(--primary);
+}
+
+/* ── Past (already walked through) ── */
+.stepper-stop.past .stepper-stop__dot {
+  background: var(--primary-dark);
+  border-color: rgba(220,20,60,0.45);
+  width: 8px;
+  height: 8px;
+}
+
+/* ── Active (currently on this section) ── */
+.stepper-stop.active .stepper-stop__dot {
+  width: 20px;
+  height: 20px;
+  background: rgba(220,20,60,0.15);
+  border-color: var(--primary);
+  border-width: 2px;
+  box-shadow:
+    0 0 0 5px rgba(220,20,60,0.1),
+    0 0 16px rgba(220,20,60,0.4);
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.stepper-stop.active .stepper-stop__dot::after {
+  content: '';
+  position: absolute;
+  inset: 4px;
+  border-radius: 50%;
+  background: var(--primary);
+}
+
+.stepper-stop.active .stepper-stop__tooltip {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+}
+
+.stepper-stop.active .stepper-stop__tooltip-group {
+  color: rgba(220,20,60,0.65);
+}
+
+.stepper-stop.active .stepper-stop__tooltip-name {
+  color: var(--primary-light);
+  font-weight: 700;
+  border-color: rgba(220,20,60,0.2);
+}
+
+/* ── Hide on very small screens ── */
+@media (max-width: 640px) {
+  .docs-stepper { display: none; }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   DOCS CONTENT
+═══════════════════════════════════════════════════════════════ */
+
+.docs-content section {
+  margin-bottom: var(--space-20);
+  scroll-margin-top: calc(var(--nav-height) + 24px);
+}
+
+/* ── Page hero ── */
+.docs-hero {
+  margin-bottom: var(--space-12);
+  padding-bottom: var(--space-12);
+  border-bottom: 1px solid var(--border);
+}
+
+.docs-hero__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--primary-light);
+  margin-bottom: var(--space-4);
+}
+
+.docs-hero h1 {
+  font-size: clamp(var(--text-3xl), 4vw, var(--text-5xl));
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin-bottom: var(--space-4);
+}
+
+.docs-hero__subtitle {
+  font-size: var(--text-lg);
+  color: var(--text-muted);
+  line-height: 1.7;
+  max-width: 55ch;
+}
+
+/* ── Section headings ── */
+.docs-content h2 {
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--space-6);
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.docs-content h2 .h2-icon {
+  font-size: var(--text-xl);
+  background: var(--primary-subtle);
+  border: 1px solid rgba(220,20,60,0.2);
+  border-radius: var(--radius-sm);
+  width: 38px; height: 38px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+
+.docs-content h3 {
+  font-size: var(--text-lg);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-bottom: var(--space-4);
+  margin-top: var(--space-8);
+  color: var(--text-secondary);
+}
+
+.docs-content p {
+  font-size: var(--text-base);
+  color: var(--text-muted);
+  line-height: 1.8;
+  margin-bottom: var(--space-5);
+}
+
+.docs-content strong { color: var(--text-primary); font-weight: 600; }
+
+/* ── Step Cards ── */
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  margin-bottom: var(--space-8);
+}
+
+.step-card {
+  display: flex;
+  gap: var(--space-5);
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  transition: border-color 0.2s ease;
+}
+
+.step-card:hover { border-color: rgba(220,20,60,0.2); }
+
+.step-card__num {
+  width: 36px; height: 36px;
+  border-radius: var(--radius-md);
+  background: var(--primary);
+  color: white;
+  font-size: var(--text-sm);
+  font-weight: 800;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px var(--primary-glow);
+}
+
+.step-card__body { flex: 1; }
+.step-card__title { font-size: var(--text-base); font-weight: 700; margin-bottom: var(--space-2); }
+.step-card__text  { font-size: var(--text-sm); color: var(--text-muted); line-height: 1.75; }
+
+/* ── Callouts ── */
+.docs-content code {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.85em;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 2px 7px;
+  color: var(--primary-light);
+}
+
+.callout {
+  display: flex;
+  gap: var(--space-4);
+  padding: var(--space-5);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-6);
+}
+
+.callout--info    { background: rgba(59,130,246,0.08); border: 1px solid rgba(59,130,246,0.2); }
+.callout--warning { background: rgba(245,158,11,0.08); border: 1px solid rgba(245,158,11,0.2); }
+.callout--tip     { background: rgba(16,185,129,0.08); border: 1px solid rgba(16,185,129,0.2); }
+
+.callout__icon { font-size: var(--text-xl); flex-shrink: 0; }
+.callout__body { flex: 1; }
+.callout__title { font-size: var(--text-sm); font-weight: 700; margin-bottom: var(--space-1); }
+.callout--info .callout__title    { color: #60A5FA; }
+.callout--warning .callout__title { color: #FBBF24; }
+.callout--tip .callout__title     { color: #34D399; }
+.callout__text { font-size: var(--text-sm); color: var(--text-muted); line-height: 1.7; }
+
+/* ── Quick-nav Cards ── */
+.nav-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-4);
+  margin-bottom: var(--space-8);
+}
+
+.nav-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.nav-card:hover {
+  background: var(--bg-card-hover);
+  border-color: rgba(220,20,60,0.25);
+  transform: translateY(-2px);
+}
+
+.nav-card__icon {
+  font-size: 24px;
+  width: 48px; height: 48px;
+  background: var(--primary-subtle);
+  border: 1px solid rgba(220,20,60,0.15);
+  border-radius: var(--radius-md);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+
+.nav-card__title { font-size: var(--text-base); font-weight: 700; }
+.nav-card__desc  { font-size: var(--text-sm); color: var(--text-muted); margin-top: 2px; }
+
+@media (max-width: 560px) { .nav-cards { grid-template-columns: 1fr; } }
+
+/* ── Table ── */
+.docs-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: var(--space-8);
+  font-size: var(--text-sm);
+}
+
+.docs-table th {
+  text-align: left;
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--border);
+}
+
+.docs-table td {
+  padding: var(--space-4);
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  color: var(--text-secondary);
+  vertical-align: top;
+}
+
+.docs-table tr:hover td { background: var(--bg-glass); }
+
+/* ── FAQ ── */
+.faq-list { display: flex; flex-direction: column; gap: var(--space-3); }
+
+.faq-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: border-color 0.2s ease;
+}
+
+.faq-item.open { border-color: rgba(220,20,60,0.25); }
+
+.faq-question {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding: var(--space-5) var(--space-6);
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--text-primary);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: var(--font);
+  transition: color 0.2s ease;
+}
+
+.faq-question:hover { color: var(--primary-light); }
+
+.faq-icon {
+  width: 24px; height: 24px;
+  border-radius: 50%;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+  transition: all 0.3s ease;
+}
+
+.faq-item.open .faq-icon {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: white;
+  transform: rotate(45deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+}
+
+.faq-item.open .faq-answer { max-height: 400px; }
+
+.faq-answer__inner {
+  padding: 0 var(--space-6) var(--space-6);
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+  line-height: 1.8;
+}

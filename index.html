@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MOD STORE – Discover PC, TV &amp; Android Apps in One Place</title>
+  <meta name="description" content="MOD STORE is the ultimate Android app for discovering and managing PC, TV, and mobile applications. GitHub sync, smart search, rich app profiles, and a personal library – all in one beautifully designed experience." />
+  <meta name="theme-color" content="#DC143C" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" />
+  <link rel="stylesheet" href="assets/css/global.css" />
+  <link rel="stylesheet" href="assets/css/home.css" />
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════
+     NAVIGATION
+════════════════════════════════════════════════════════════ -->
+<nav class="nav" id="main-nav" aria-label="Main navigation">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__logo" id="nav-logo">
+      <div class="nav__logo-icon" aria-hidden="true">M</div>
+      MOD STORE
+    </a>
+
+    <ul class="nav__links" role="list">
+      <li><a href="index.html" class="nav__link" id="nav-link-home">Home</a></li>
+      <li><a href="#features" class="nav__link" id="nav-link-features">Features</a></li>
+      <li><a href="#showcase" class="nav__link" id="nav-link-showcase">Showcase</a></li>
+      <li><a href="docs.html" class="nav__link" id="nav-link-docs">Documentation</a></li>
+      <li><a href="https://github.com/Developer-For-Git" target="_blank" rel="noopener" class="nav__link" id="nav-link-github">GitHub ↗</a></li>
+      <li><a href="privacy.html" class="nav__link" id="nav-link-privacy">Privacy</a></li>
+    </ul>
+
+    <div class="nav__actions">
+      <a href="docs.html" class="btn btn--ghost" id="nav-btn-docs">Docs</a>
+      <a href="https://github.com/Developer-For-Git/MOD-STORE/releases/download/New/MOD-STORE-UPDATED.apk" class="btn btn--primary" id="nav-btn-download">Download App</a>
+    </div>
+
+    <button class="nav__hamburger" id="nav-hamburger" aria-label="Open navigation menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile nav overlay -->
+<div class="nav__mobile" id="nav-mobile" role="navigation" aria-label="Mobile navigation">
+  <a href="index.html" class="nav__link" id="mobile-nav-home">Home</a>
+  <a href="#features" class="nav__link" id="mobile-nav-features">Features</a>
+  <a href="#showcase" class="nav__link" id="mobile-nav-showcase">Showcase</a>
+  <a href="docs.html" class="nav__link" id="mobile-nav-docs">Documentation</a>
+  <a href="https://github.com/Developer-For-Git" target="_blank" rel="noopener" class="nav__link" id="mobile-nav-github">GitHub ↗</a>
+  <a href="privacy.html" class="nav__link" id="mobile-nav-privacy">Privacy Policy</a>
+  <a href="https://github.com/Developer-For-Git/MOD-STORE/releases/download/New/MOD-STORE-UPDATED.apk" class="btn btn--primary" id="mobile-nav-download">Download App</a>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     HERO
+════════════════════════════════════════════════════════════ -->
+<section class="hero" id="hero" aria-labelledby="hero-heading">
+  <div class="hero__bg" aria-hidden="true">
+    <div class="hero__orb hero__orb--1"></div>
+    <div class="hero__orb hero__orb--2"></div>
+    <div class="hero__orb hero__orb--3"></div>
+    <div class="hero__grid"></div>
+  </div>
+
+  <div class="container">
+    <div class="hero__content">
+      <!-- Left: Text -->
+      <div class="hero__text">
+        <div class="hero__eyebrow">
+          <span class="hero__eyebrow-dot" aria-hidden="true"></span>
+          Now Available on Android
+        </div>
+
+        <h1 class="hero__title" id="hero-heading">
+          One App.<br />
+          <span class="gradient-text">Every Platform.</span>
+        </h1>
+
+        <p class="hero__subtitle">
+          MOD STORE unifies PC, TV, and Android application discovery in a single, beautifully crafted experience. Search smarter, sync with GitHub, and build your personal app library.
+        </p>
+
+        <div class="hero__actions">
+          <a href="https://github.com/Developer-For-Git/MOD-STORE/releases/download/New/MOD-STORE-UPDATED.apk" target="_blank" rel="noopener" class="btn btn--primary btn--xl" id="hero-download-btn">
+            <span aria-hidden="true">⬇</span> Download Free
+          </a>
+          <a href="docs.html" class="btn btn--ghost btn--xl" id="hero-docs-btn">
+            Read the Docs
+          </a>
+        </div>
+
+        <div class="hero__platform-badges" aria-label="Supported platforms">
+          <span class="hero__platform-badge">
+            <span class="dot" aria-hidden="true"></span> PC Apps
+          </span>
+          <span class="hero__platform-badge">
+            <span class="dot" aria-hidden="true"></span> TV Apps
+          </span>
+          <span class="hero__platform-badge">
+            <span class="dot" aria-hidden="true"></span> Android Apps
+          </span>
+          <span class="hero__platform-badge">
+            <span class="dot" aria-hidden="true"></span> GitHub Sync
+          </span>
+        </div>
+      </div>
+
+      <!-- Right: Mockup -->
+      <div class="hero__visual" aria-hidden="true">
+        <div class="hero__mockup-wrap">
+          <!-- Silver Phone Frame styling added via CSS -->
+          <div class="hero__mockup-notch"></div>
+          <img src="https://raw.githubusercontent.com/Developer-For-Git/MOD-STORE-WEB-AS-DOC-DATA/refs/heads/main/SCREENSHOT/Screenshot_20260407_165447.jpg"
+               alt="MOD STORE home screen showing app discovery feed"
+               class="hero__mockup"
+               width="360"
+               loading="eager" />
+          <div class="hero__mockup-glow"></div>
+
+          <div class="hero__stat-chip hero__stat-chip--bottom">
+            <span class="icon" aria-hidden="true">📱</span>
+            <span class="label">Platforms</span>
+            <span class="value">PC · TV · Android</span>
+          </div>
+
+          <div class="hero__stat-chip hero__stat-chip--top">
+            <span class="icon" aria-hidden="true">⭐</span>
+            <span class="label">GitHub Sync</span>
+            <span class="value">Enabled</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     STATS BAR
+════════════════════════════════════════════════════════════ -->
+<div class="stats-bar" aria-label="Key statistics">
+  <div class="container">
+    <div class="stats-bar__grid">
+      <div class="stat-item reveal">
+        <span class="stat-item__value">3</span>
+        <span class="stat-item__label">Platforms Supported</span>
+      </div>
+      <div class="stat-item reveal reveal--delay-1">
+        <span class="stat-item__value">1000+</span>
+        <span class="stat-item__label">Apps to Discover</span>
+      </div>
+      <div class="stat-item reveal reveal--delay-2">
+        <span class="stat-item__value">1</span>
+        <span class="stat-item__label">Unified Interface</span>
+      </div>
+      <div class="stat-item reveal reveal--delay-3">
+        <span class="stat-item__value">0</span>
+        <span class="stat-item__label">Cost to Download</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     FEATURES
+════════════════════════════════════════════════════════════ -->
+<section class="features section" id="features" aria-labelledby="features-heading">
+  <div class="container">
+    <header class="section-header reveal">
+      <div class="section-header__eyebrow" aria-hidden="true">
+        <span>✦</span> Core Capabilities
+      </div>
+      <h2 class="section-header__title" id="features-heading">
+        Everything You Need,<br />
+        <span class="gradient-text">Nothing You Don't</span>
+      </h2>
+      <p class="section-header__subtitle">
+        MOD STORE brings together the tools and features that matter most — powerful discovery, beautiful presentation, and seamless sync.
+      </p>
+    </header>
+
+    <div class="features__grid">
+      <!-- Card 1 – Wide -->
+      <article class="feature-card reveal" id="feature-multiplatform">
+        <div class="feature-card__icon" aria-hidden="true">🖥️</div>
+        <h3 class="feature-card__title">Multi-Platform Support</h3>
+        <p class="feature-card__description">
+          Browse curated selections of PC software, Smart TV applications, and Android apps — all in one unified interface. Switch platforms with a single tap using the dynamic category chips at the top of every screen.
+        </p>
+        <div class="feature-card__tags" aria-label="Supported platforms">
+          <span class="feature-tag">Windows PC</span>
+          <span class="feature-tag">Smart TV</span>
+          <span class="feature-tag">Android</span>
+          <span class="feature-tag">Category Chips</span>
+        </div>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="feature-card reveal reveal--delay-1" id="feature-profiles">
+        <div class="feature-card__icon" aria-hidden="true">📋</div>
+        <h3 class="feature-card__title">Rich App Profiles</h3>
+        <p class="feature-card__description">
+          Every app gets a beautifully detailed profile page — screenshots, full description, version history, file size, changelogs, and more. No more hunting for information across multiple sites.
+        </p>
+        <div class="feature-card__tags">
+          <span class="feature-tag">Screenshots</span>
+          <span class="feature-tag">Changelogs</span>
+        </div>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="feature-card reveal reveal--delay-2" id="feature-github">
+        <div class="feature-card__icon" aria-hidden="true">🔗</div>
+        <h3 class="feature-card__title">GitHub Integration</h3>
+        <p class="feature-card__description">
+          Sign in with your GitHub account to sync your favorites, preferences, and profile across all your devices. Secure OAuth flow — no passwords stored.
+        </p>
+        <div class="feature-card__tags">
+          <span class="feature-tag">OAuth</span>
+          <span class="feature-tag">Cross-Device Sync</span>
+        </div>
+      </article>
+
+      <!-- Card 4 -->
+      <article class="feature-card reveal reveal--delay-1" id="feature-discovery">
+        <div class="feature-card__icon" aria-hidden="true">🔍</div>
+        <h3 class="feature-card__title">Smart Discovery</h3>
+        <p class="feature-card__description">
+          Advanced search with real-time results, dynamic category filtering, and sorting options including Latest, Popular, and more — find exactly what you're looking for in seconds.
+        </p>
+        <div class="feature-card__tags">
+          <span class="feature-tag">Search</span>
+          <span class="feature-tag">Sort by Latest</span>
+          <span class="feature-tag">Sort by Popular</span>
+        </div>
+      </article>
+
+      <!-- Card 5 -->
+      <article class="feature-card reveal reveal--delay-2" id="feature-library">
+        <div class="feature-card__icon" aria-hidden="true">❤️</div>
+        <h3 class="feature-card__title">Personal Library</h3>
+        <p class="feature-card__description">
+          Bookmark your favorite apps into a personal library for quick access anytime. Synced to your GitHub account so your collection travels with you.
+        </p>
+        <div class="feature-card__tags">
+          <span class="feature-tag">Favorites</span>
+          <span class="feature-tag">Library</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     SHOWCASE – SWIPEABLE PHONE STAGE
+════════════════════════════════════════════════════════════ -->
+<section class="showcase section" id="showcase" aria-labelledby="showcase-heading">
+  <div class="container">
+    <header class="section-header reveal">
+      <div class="section-header__eyebrow" aria-hidden="true">
+        <span>✦</span> App Showcase
+      </div>
+      <h2 class="section-header__title" id="showcase-heading">
+        See It in <span class="gradient-text">Action</span>
+      </h2>
+      <p class="section-header__subtitle">
+        A real look at MOD STORE — swipe through the home feed, app catalog, and settings screen.
+      </p>
+    </header>
+
+    <!-- Phone Stage (Swipeable 3D Carousel) -->
+    <div class="phone-stage reveal" id="phone-stage" aria-label="Swipeable app screenshots">
+
+      <!-- Slide 1 -->
+      <div class="stage-device">
+        <div class="stage-device__notch"></div>
+        <img src="https://raw.githubusercontent.com/Developer-For-Git/MOD-STORE-WEB-AS-DOC-DATA/refs/heads/main/SCREENSHOT/Screenshot_20260407_165451.jpg" alt="PC Apps Catalog" draggable="false" />
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="stage-device">
+        <div class="stage-device__notch"></div>
+        <img src="https://raw.githubusercontent.com/Developer-For-Git/MOD-STORE-WEB-AS-DOC-DATA/refs/heads/main/SCREENSHOT/Screenshot_20260407_165447.jpg" alt="Home Screen" draggable="false" />
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="stage-device">
+        <div class="stage-device__notch"></div>
+        <img src="https://raw.githubusercontent.com/Developer-For-Git/MOD-STORE-WEB-AS-DOC-DATA/refs/heads/main/SCREENSHOT/Screenshot_20260407_165457.jpg" alt="App Settings" draggable="false" />
+      </div>
+
+      <!-- Slide 4 -->
+      <div class="stage-device">
+        <div class="stage-device__notch"></div>
+        <img src="https://raw.githubusercontent.com/Developer-For-Git/MOD-STORE-WEB-AS-DOC-DATA/refs/heads/main/SCREENSHOT/Screenshot_20260407_205702.jpg" alt="App Details" draggable="false" />
+      </div>
+
+      <!-- Slide 5 -->
+      <div class="stage-device">
+        <div class="stage-device__notch"></div>
+        <img src="https://raw.githubusercontent.com/Developer-For-Git/MOD-STORE-WEB-AS-DOC-DATA/refs/heads/main/SCREENSHOT/Screenshot_20260407_205804.jpg" alt="Download Progress" draggable="false" />
+      </div>
+
+      <!-- Slide 6 -->
+      <div class="stage-device">
+        <div class="stage-device__notch"></div>
+        <img src="https://raw.githubusercontent.com/Developer-For-Git/MOD-STORE-WEB-AS-DOC-DATA/refs/heads/main/SCREENSHOT/Screenshot_20260407_210455.jpg" alt="More Options" draggable="false" />
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     CTA DOWNLOAD
+════════════════════════════════════════════════════════════ -->
+<section class="cta-section section" id="download" aria-labelledby="cta-heading">
+  <div class="container">
+    <div class="cta-banner reveal">
+      <div class="cta-ring cta-ring--1" aria-hidden="true"></div>
+      <div class="cta-ring cta-ring--2" aria-hidden="true"></div>
+      <div class="cta-banner__content">
+        <div class="badge badge--primary" aria-hidden="true">Free Download</div>
+        <h2 class="cta-banner__title" id="cta-heading">
+          Ready to Explore <span class="gradient-text">Every App</span>?
+        </h2>
+        <p class="cta-banner__subtitle">
+          Download MOD STORE on your Android device today and unlock a unified world of PC, TV, and Android applications.
+        </p>
+        <div class="cta-banner__actions">
+          <a href="https://github.com/Developer-For-Git/MOD-STORE/releases/download/New/MOD-STORE-UPDATED.apk" target="_blank" rel="noopener" class="btn btn--primary btn--xl" id="cta-download-btn" aria-label="Download MOD STORE APK">
+            <span aria-hidden="true">⬇</span> Download APK
+          </a>
+          <a href="docs.html#getting-started" class="btn btn--ghost btn--xl" id="cta-docs-btn">
+            Installation Guide
+          </a>
+        </div>
+        <p style="font-size: 0.78rem; color: var(--text-faint); margin-top: -8px;">
+          Android 6.0+ required &nbsp;·&nbsp; Free forever &nbsp;·&nbsp; No account required to browse
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════════════════════════ -->
+<footer class="footer" aria-label="Site footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a href="index.html" class="footer__logo" id="footer-logo">
+          <div class="nav__logo-icon" aria-hidden="true">M</div>
+          MOD STORE
+        </a>
+        <p class="footer__tagline">
+          The ultimate Android client for discovering, searching, and managing PC, TV, and Android applications.
+        </p>
+      </div>
+
+      <div>
+        <p class="footer__col-title">Product</p>
+        <ul class="footer__links" role="list">
+          <li><a href="#features" class="footer__link" id="footer-features">Features</a></li>
+          <li><a href="#showcase" class="footer__link" id="footer-showcase">Showcase</a></li>
+          <li><a href="#download" class="footer__link" id="footer-download">Download</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="footer__col-title">Resources</p>
+        <ul class="footer__links" role="list">
+          <li><a href="docs.html" class="footer__link" id="footer-docs">Documentation</a></li>
+          <li><a href="docs.html#getting-started" class="footer__link" id="footer-getting-started">Getting Started</a></li>
+          <li><a href="docs.html#faq" class="footer__link" id="footer-faq">FAQ</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="footer__col-title">Legal</p>
+        <ul class="footer__links" role="list">
+          <li><a href="privacy.html" class="footer__link" id="footer-privacy">Privacy Policy</a></li>
+          <li><a href="https://github.com/Developer-For-Git" target="_blank" rel="noopener" class="footer__link" id="footer-github">GitHub ↗</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <span>&copy; 2025 MOD STORE. All rights reserved.</span>
+      <span>Built with ❤️ for the Android community.</span>
+    </div>
+  </div>
+</footer>
+
+
+<script src="assets/js/nav.js"></script>
+<script src="assets/js/showcase.js"></script>
+</body>
+</html>

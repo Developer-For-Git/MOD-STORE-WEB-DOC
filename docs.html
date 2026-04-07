@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Documentation – MOD STORE</title>
+  <meta name="description" content="Complete documentation and user manual for MOD STORE. Learn how to install the app, connect your GitHub account, navigate the UI, and troubleshoot common issues." />
+  <meta name="theme-color" content="#DC143C" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" />
+  <link rel="stylesheet" href="assets/css/global.css" />
+  <link rel="stylesheet" href="assets/css/docs.css" />
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════
+     NAVIGATION
+════════════════════════════════════════════════════════════ -->
+<nav class="nav" id="main-nav" aria-label="Main navigation">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__logo" id="nav-logo">
+      <div class="nav__logo-icon" aria-hidden="true">M</div>
+      MOD STORE
+    </a>
+    <ul class="nav__links" role="list">
+      <li><a href="index.html" class="nav__link" id="nav-home">Home</a></li>
+      <li><a href="index.html#features" class="nav__link" id="nav-features">Features</a></li>
+      <li><a href="index.html#showcase" class="nav__link" id="nav-showcase">Showcase</a></li>
+      <li><a href="docs.html" class="nav__link" id="nav-docs" style="color: var(--primary-light);">Documentation</a></li>
+      <li><a href="https://github.com/Developer-For-Git" target="_blank" rel="noopener" class="nav__link" id="nav-github">GitHub ↗</a></li>
+      <li><a href="privacy.html" class="nav__link" id="nav-privacy">Privacy</a></li>
+    </ul>
+    <div class="nav__actions">
+      <a href="https://github.com/Developer-For-Git/MOD-STORE/releases/download/New/MOD-STORE-UPDATED.apk" class="btn btn--primary" id="nav-download">Download App</a>
+    </div>
+    <button class="nav__hamburger" id="nav-hamburger" aria-label="Open navigation menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="nav__mobile" id="nav-mobile" role="navigation" aria-label="Mobile navigation">
+  <a href="index.html" class="nav__link" id="mobile-home">Home</a>
+  <a href="index.html#features" class="nav__link" id="mobile-features">Features</a>
+  <a href="index.html#showcase" class="nav__link" id="mobile-showcase">Showcase</a>
+  <a href="docs.html" class="nav__link" id="mobile-docs">Documentation</a>
+  <a href="https://github.com/Developer-For-Git" target="_blank" rel="noopener" class="nav__link" id="mobile-github">GitHub ↗</a>
+  <a href="privacy.html" class="nav__link" id="mobile-privacy">Privacy Policy</a>
+  <a href="https://github.com/Developer-For-Git/MOD-STORE/releases/download/New/MOD-STORE-UPDATED.apk" class="btn btn--primary" id="mobile-download">Download App</a>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     DOCS LAYOUT
+════════════════════════════════════════════════════════════ -->
+
+<!-- ── Vertical Walking Stepper ── -->
+<nav class="docs-stepper" id="docs-stepper" aria-label="Documentation progress">
+  <div class="docs-stepper__rail">
+    <div class="docs-stepper__rail-fill" id="stepper-fill"></div>
+  </div>
+
+  <ul class="docs-stepper__list">
+    <li class="stepper-stop" data-stepper-target="introduction" id="stop-intro">
+      <a href="#introduction" aria-label="Introduction">
+        <div class="stepper-stop__dot"></div>
+      </a>
+      <div class="stepper-stop__tooltip">
+        <span class="stepper-stop__tooltip-group">Overview</span>
+        <span class="stepper-stop__tooltip-name">📖 Introduction</span>
+      </div>
+    </li>
+    <li class="stepper-stop" data-stepper-target="getting-started" id="stop-start">
+      <a href="#getting-started" aria-label="Getting Started">
+        <div class="stepper-stop__dot"></div>
+      </a>
+      <div class="stepper-stop__tooltip">
+        <span class="stepper-stop__tooltip-group">Setup</span>
+        <span class="stepper-stop__tooltip-name">🚀 Getting Started</span>
+      </div>
+    </li>
+    <li class="stepper-stop" data-stepper-target="authentication" id="stop-auth">
+      <a href="#authentication" aria-label="GitHub Authentication">
+        <div class="stepper-stop__dot"></div>
+      </a>
+      <div class="stepper-stop__tooltip">
+        <span class="stepper-stop__tooltip-group">Setup</span>
+        <span class="stepper-stop__tooltip-name">🔐 GitHub Auth</span>
+      </div>
+    </li>
+    <li class="stepper-stop" data-stepper-target="navigation" id="stop-nav">
+      <a href="#navigation" aria-label="Navigation Guide">
+        <div class="stepper-stop__dot"></div>
+      </a>
+      <div class="stepper-stop__tooltip">
+        <span class="stepper-stop__tooltip-group">Using the App</span>
+        <span class="stepper-stop__tooltip-name">🧭 Navigation</span>
+      </div>
+    </li>
+    <li class="stepper-stop" data-stepper-target="search-filter" id="stop-search">
+      <a href="#search-filter" aria-label="Search and Filter">
+        <div class="stepper-stop__dot"></div>
+      </a>
+      <div class="stepper-stop__tooltip">
+        <span class="stepper-stop__tooltip-group">Using the App</span>
+        <span class="stepper-stop__tooltip-name">🔍 Search &amp; Filter</span>
+      </div>
+    </li>
+    <li class="stepper-stop" data-stepper-target="library" id="stop-library">
+      <a href="#library" aria-label="Your Library">
+        <div class="stepper-stop__dot"></div>
+      </a>
+      <div class="stepper-stop__tooltip">
+        <span class="stepper-stop__tooltip-group">Using the App</span>
+        <span class="stepper-stop__tooltip-name">❤️ Your Library</span>
+      </div>
+    </li>
+    <li class="stepper-stop" data-stepper-target="faq" id="stop-faq">
+      <a href="#faq" aria-label="FAQ">
+        <div class="stepper-stop__dot"></div>
+      </a>
+      <div class="stepper-stop__tooltip">
+        <span class="stepper-stop__tooltip-group">Help</span>
+        <span class="stepper-stop__tooltip-name">💬 FAQ</span>
+      </div>
+    </li>
+  </ul>
+</nav>
+
+
+<div class="docs-page">
+  <!-- ── Main Content ── -->
+  <main class="docs-content" id="docs-main">
+
+    <!-- Docs Hero -->
+    <div class="docs-hero">
+      <div class="docs-hero__eyebrow">
+        <span aria-hidden="true">📚</span> Official Documentation
+      </div>
+      <h1>MOD STORE Manual</h1>
+      <p class="docs-hero__subtitle">
+        Everything you need to install, configure, and get the most out of the MOD STORE app — from first launch to advanced features.
+      </p>
+
+      <!-- Quick nav cards -->
+      <div class="nav-cards">
+        <a href="#getting-started" class="nav-card" id="quick-start-card">
+          <div class="nav-card__icon" aria-hidden="true">🚀</div>
+          <div>
+            <div class="nav-card__title">Getting Started</div>
+            <div class="nav-card__desc">Install &amp; first launch guide</div>
+          </div>
+        </a>
+        <a href="#authentication" class="nav-card" id="quick-auth-card">
+          <div class="nav-card__icon" aria-hidden="true">🔐</div>
+          <div>
+            <div class="nav-card__title">GitHub Sign In</div>
+            <div class="nav-card__desc">Connect your GitHub account</div>
+          </div>
+        </a>
+        <a href="#navigation" class="nav-card" id="quick-nav-card">
+          <div class="nav-card__icon" aria-hidden="true">🧭</div>
+          <div>
+            <div class="nav-card__title">Navigation Guide</div>
+            <div class="nav-card__desc">Explore the app interface</div>
+          </div>
+        </a>
+        <a href="#faq" class="nav-card" id="quick-faq-card">
+          <div class="nav-card__icon" aria-hidden="true">💬</div>
+          <div>
+            <div class="nav-card__title">FAQ</div>
+            <div class="nav-card__desc">Common questions &amp; fixes</div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- ── Introduction ── -->
+    <section id="introduction" aria-labelledby="intro-heading">
+      <h2 id="intro-heading">
+        <span class="h2-icon" aria-hidden="true">📖</span> Introduction
+      </h2>
+      <p>
+        <strong>MOD STORE</strong> is an Android application designed to be your single, unified destination for discovering and managing applications across multiple platforms. Whether you're looking for PC software, Smart TV apps, or mobile applications, MOD STORE brings them all together in one beautifully crafted interface.
+      </p>
+      <p>
+        The app is <strong>free to download</strong> and does not require an account to browse. Connecting a GitHub account unlocks additional features like favorites sync, personalized library, and cross-device preferences.
+      </p>
+
+      <div class="callout callout--info">
+        <span class="callout__icon" aria-hidden="true">ℹ️</span>
+        <div class="callout__body">
+          <p class="callout__title">What MOD STORE Is (and Isn't)</p>
+          <p class="callout__text">MOD STORE is a <strong>discovery and management client</strong>. It helps you find and track applications. All app installations are handled through each application's own installer or official source.</p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ── Getting Started ── -->
+    <section id="getting-started" aria-labelledby="getting-started-heading">
+      <h2 id="getting-started-heading">
+        <span class="h2-icon" aria-hidden="true">🚀</span> Getting Started
+      </h2>
+      <p>Follow these steps to get MOD STORE running on your Android device or Android-based Smart TV.</p>
+
+      <h3>Installing on an Android Phone or Tablet</h3>
+      <div class="steps">
+        <div class="step-card">
+          <div class="step-card__num" aria-label="Step 1">1</div>
+          <div class="step-card__body">
+            <p class="step-card__title">Download the APK</p>
+            <p class="step-card__text">Visit the official download page (or GitHub Releases) and tap the latest <code>.apk</code> file to download it to your device.</p>
+          </div>
+        </div>
+        <div class="step-card">
+          <div class="step-card__num" aria-label="Step 2">2</div>
+          <div class="step-card__body">
+            <p class="step-card__title">Enable Unknown Sources</p>
+            <p class="step-card__text">Go to <strong>Settings → Security → Install Unknown Apps</strong> (or <strong>Special App Access</strong> on newer Android). Allow your browser or file manager to install APK files.</p>
+          </div>
+        </div>
+        <div class="step-card">
+          <div class="step-card__num" aria-label="Step 3">3</div>
+          <div class="step-card__body">
+            <p class="step-card__title">Open the APK and Install</p>
+            <p class="step-card__text">Tap the downloaded APK from your notification shade or file manager and follow the on-screen prompts to install MOD STORE.</p>
+          </div>
+        </div>
+        <div class="step-card">
+          <div class="step-card__num" aria-label="Step 4">4</div>
+          <div class="step-card__body">
+            <p class="step-card__title">Launch &amp; Explore</p>
+            <p class="step-card__text">Open MOD STORE. You can immediately browse PC, TV, and Android apps without signing in. To unlock the library and sync features, see the GitHub Authentication guide below.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout callout--tip">
+        <span class="callout__icon" aria-hidden="true">💡</span>
+        <div class="callout__body">
+          <p class="callout__title">Minimum Requirements</p>
+          <p class="callout__text">MOD STORE requires <strong>Android 6.0 (Marshmallow)</strong> or higher. An active internet connection is needed to load app catalogs.</p>
+        </div>
+      </div>
+
+      <h3>Installing on a Smart TV (Android TV / Google TV)</h3>
+      <div class="steps">
+        <div class="step-card">
+          <div class="step-card__num" aria-label="Step 1">1</div>
+          <div class="step-card__body">
+            <p class="step-card__title">Transfer the APK</p>
+            <p class="step-card__text">Download the APK on another device, then transfer it to your TV via a USB drive, or use a file-sharing app like <strong>Send Files to TV</strong> or <strong>Downloader</strong> to pull it directly.</p>
+          </div>
+        </div>
+        <div class="step-card">
+          <div class="step-card__num" aria-label="Step 2">2</div>
+          <div class="step-card__body">
+            <p class="step-card__title">Enable Unknown Sources on TV</p>
+            <p class="step-card__text">Go to your TV's <strong>Settings → Device Preferences → Security &amp; Restrictions</strong> and enable unknown sources for the Downloader or file manager app.</p>
+          </div>
+        </div>
+        <div class="step-card">
+          <div class="step-card__num" aria-label="Step 3">3</div>
+          <div class="step-card__body">
+            <p class="step-card__title">Install &amp; Launch</p>
+            <p class="step-card__text">Open the APK using your file manager and install it. MOD STORE will appear in your apps list and is optimized for TV navigation with a D-pad or remote control.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ── Authentication ── -->
+    <section id="authentication" aria-labelledby="auth-heading">
+      <h2 id="auth-heading">
+        <span class="h2-icon" aria-hidden="true">🔐</span> GitHub Authentication
+      </h2>
+      <p>
+        MOD STORE uses <strong>GitHub OAuth</strong> to securely authenticate users. No passwords are ever stored — only a secure OAuth token is saved locally on your device to maintain your session.
+      </p>
+
+      <div class="callout callout--info">
+        <span class="callout__icon" aria-hidden="true">ℹ️</span>
+        <div class="callout__body">
+          <p class="callout__title">Why GitHub?</p>
+          <p class="callout__text">GitHub authentication is used because MOD STORE is tightly integrated with the GitHub ecosystem. Your GitHub profile picture, username, and other metadata are used to personalize your experience inside the app.</p>
+        </div>
+      </div>
+
+      <h3>Connecting Your GitHub Account</h3>
+      <div class="steps">
+        <div class="step-card">
+          <div class="step-card__num" aria-label="Step 1">1</div>
+          <div class="step-card__body">
+            <p class="step-card__title">Open the Profile Tab</p>
+            <p class="step-card__text">Tap the <strong>Profile</strong> icon in the bottom navigation bar (or swipe to the Profile screen). You will see a "Sign in with GitHub" button.</p>
+          </div>
+        </div>
+        <div class="step-card">
+          <div class="step-card__num" aria-label="Step 2">2</div>
+          <div class="step-card__body">
+            <p class="step-card__title">Authorize in Browser</p>
+            <p class="step-card__text">Tapping the button opens GitHub's authorization page in your browser. Review the requested permissions — MOD STORE only requests your <strong>public profile</strong> access — and tap <strong>"Authorize"</strong>.</p>
+          </div>
+        </div>
+        <div class="step-card">
+          <div class="step-card__num" aria-label="Step 3">3</div>
+          <div class="step-card__body">
+            <p class="step-card__title">Return to the App</p>
+            <p class="step-card__text">After authorization, you will be redirected back to MOD STORE automatically. Your GitHub avatar and username will appear in the profile tab, confirming a successful login.</p>
+          </div>
+        </div>
+        <div class="step-card">
+          <div class="step-card__num" aria-label="Step 4">4</div>
+          <div class="step-card__body">
+            <p class="step-card__title">Sync Enabled</p>
+            <p class="step-card__text">Features like the personal library, favorites, and synced preferences are now available. Your data is tied to your GitHub account for seamless cross-device access.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout callout--warning">
+        <span class="callout__icon" aria-hidden="true">⚠️</span>
+        <div class="callout__body">
+          <p class="callout__title">Signing Out</p>
+          <p class="callout__text">To sign out, go to the <strong>Profile</strong> tab and tap <strong>"Sign Out"</strong>. This will clear your session token from the device. Your favorites are preserved server-side and will re-sync when you sign back in.</p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ── Navigation Guide ── -->
+    <section id="navigation" aria-labelledby="nav-heading">
+      <h2 id="nav-heading">
+        <span class="h2-icon" aria-hidden="true">🧭</span> Navigation Guide
+      </h2>
+      <p>Understanding the MOD STORE interface is simple. Here's a breakdown of the main UI elements.</p>
+
+      <h3>Bottom Navigation Bar</h3>
+      <p>The bottom navigation bar gives you quick access to the app's primary sections:</p>
+
+      <table class="docs-table" aria-label="Bottom navigation items">
+        <thead>
+          <tr>
+            <th scope="col">Tab</th>
+            <th scope="col">Icon</th>
+            <th scope="col">Purpose</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Home</strong></td>
+            <td>🏠</td>
+            <td>Main discovery feed showing all apps across all platforms.</td>
+          </tr>
+          <tr>
+            <td><strong>PC Apps</strong></td>
+            <td>🖥️</td>
+            <td>Filtered view showing only PC/Windows software.</td>
+          </tr>
+          <tr>
+            <td><strong>TV Apps</strong></td>
+            <td>📺</td>
+            <td>Filtered view showing only Smart TV / Android TV apps.</td>
+          </tr>
+          <tr>
+            <td><strong>Library</strong></td>
+            <td>❤️</td>
+            <td>Your personal collection of favorited apps (requires GitHub sign-in).</td>
+          </tr>
+          <tr>
+            <td><strong>Profile</strong></td>
+            <td>👤</td>
+            <td>GitHub account management, settings, and sign-in/out.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Category Chips</h3>
+      <p>
+        At the top of the Home and platform screens, you'll find <strong>horizontal scrollable category chips</strong>. Tap any chip to instantly filter the app list to that category (e.g., Games, Tools, Utilities, Media, Productivity). The currently selected chip is highlighted in <strong>Crimson Red</strong>.
+      </p>
+
+      <h3>App Detail Pages</h3>
+      <p>
+        Tapping any app card opens its full <strong>detail profile</strong>, which includes:
+      </p>
+      <ul style="padding-left: 1.5rem; margin-bottom: 1.5rem; color: var(--text-muted); font-size: var(--text-sm); line-height: 2; list-style: disc;">
+        <li>App icon, name, and developer information</li>
+        <li>A horizontal strip of <strong>scrollable screenshots</strong></li>
+        <li>Version number, file size, and last-updated date</li>
+        <li>Full description and what's new / changelog</li>
+        <li>A prominent <strong>Install / Download</strong> action button</li>
+        <li>A heart icon to add the app to your Library</li>
+      </ul>
+    </section>
+
+
+    <!-- ── Search & Filter ── -->
+    <section id="search-filter" aria-labelledby="search-heading">
+      <h2 id="search-heading">
+        <span class="h2-icon" aria-hidden="true">🔍</span> Search &amp; Filter
+      </h2>
+      <p>MOD STORE's search is fast, intuitive, and works across all three platform types simultaneously.</p>
+
+      <h3>Using Search</h3>
+      <div class="steps">
+        <div class="step-card">
+          <div class="step-card__num" aria-label="Step 1">1</div>
+          <div class="step-card__body">
+            <p class="step-card__title">Tap the Search Bar</p>
+            <p class="step-card__text">The search bar is prominently displayed at the top of the Home screen. Tap it to open the search keyboard.</p>
+          </div>
+        </div>
+        <div class="step-card">
+          <div class="step-card__num" aria-label="Step 2">2</div>
+          <div class="step-card__body">
+            <p class="step-card__title">Type Your Query</p>
+            <p class="step-card__text">Results update in real-time as you type. Results are shown from all platforms (PC, TV, Android) unless you have a platform filter active.</p>
+          </div>
+        </div>
+        <div class="step-card">
+          <div class="step-card__num" aria-label="Step 3">3</div>
+          <div class="step-card__body">
+            <p class="step-card__title">Tap a Result</p>
+            <p class="step-card__text">Tap any result to open the full app detail page. Use the back button to return to your search results.</p>
+          </div>
+        </div>
+      </div>
+
+      <h3>Sorting Options</h3>
+      <p>Tap the <strong>Sort</strong> button (usually a slider icon near the top-right of the app list) to choose a sort order:</p>
+      <table class="docs-table" aria-label="Sorting options">
+        <thead>
+          <tr>
+            <th scope="col">Sort Option</th>
+            <th scope="col">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Latest</strong></td><td>Shows most recently added or updated apps first.</td></tr>
+          <tr><td><strong>Popular</strong></td><td>Shows apps with the highest engagement or download counts first.</td></tr>
+          <tr><td><strong>Alphabetical</strong></td><td>Sorts apps A–Z by name.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+
+    <!-- ── Library ── -->
+    <section id="library" aria-labelledby="library-heading">
+      <h2 id="library-heading">
+        <span class="h2-icon" aria-hidden="true">❤️</span> Your Library
+      </h2>
+      <p>
+        The Library is your <strong>personal collection</strong> of favorited apps. It's accessible from the bottom navigation bar and syncs automatically to your GitHub account.
+      </p>
+
+      <div class="callout callout--tip">
+        <span class="callout__icon" aria-hidden="true">💡</span>
+        <div class="callout__body">
+          <p class="callout__title">Requires GitHub Sign-In</p>
+          <p class="callout__text">The Library feature requires a connected GitHub account so your favorites can be synced across devices. See the <a href="#authentication" style="color: var(--primary-light);">GitHub Authentication</a> guide to connect your account.</p>
+        </div>
+      </div>
+
+      <h3>Adding Apps to Your Library</h3>
+      <p>
+        On any app detail page, tap the <strong>heart (♥) icon</strong> to add it to your Library. The icon will turn Crimson Red to confirm it's been saved. To remove an app, tap the heart icon again.
+      </p>
+
+      <h3>Viewing Your Library</h3>
+      <p>
+        Tap the <strong>Library tab</strong> in the bottom navigation to see all your saved apps in one place. Your Library is organized and searchable just like the main catalog.
+      </p>
+    </section>
+
+
+    <!-- ── FAQ ── -->
+    <section id="faq" aria-labelledby="faq-heading">
+      <h2 id="faq-heading">
+        <span class="h2-icon" aria-hidden="true">💬</span> FAQ
+      </h2>
+      <p>Answers to the most common questions and troubleshooting steps.</p>
+
+      <div class="faq-list" role="list">
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-question" id="faq-q1" aria-controls="faq-a1">
+            I'm getting a "Network error" or "Unable to resolve host" message. What do I do?
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer" id="faq-a1" role="region" aria-labelledby="faq-q1">
+            <div class="faq-answer__inner">
+              This error means the app cannot reach its data servers. Try the following steps:
+              <br/><br/>
+              <strong>1. Check your internet connection.</strong> Make sure you're connected to Wi-Fi or mobile data and that other apps can reach the internet.<br/>
+              <strong>2. Disable VPN or proxy.</strong> VPNs can sometimes block the app's API endpoints. Try disabling your VPN temporarily.<br/>
+              <strong>3. Flush DNS cache.</strong> On Android, go to <em>Settings → Wi-Fi → your network → forget</em>, then reconnect.<br/>
+              <strong>4. Try a different network.</strong> Switch from Wi-Fi to mobile data (or vice versa) to rule out network-specific issues.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-question" id="faq-q2" aria-controls="faq-a2">
+            The APK won't install — I see "App not installed" error.
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer" id="faq-a2" role="region" aria-labelledby="faq-q2">
+            <div class="faq-answer__inner">
+              This usually happens for one of these reasons:
+              <br/><br/>
+              <strong>• Insufficient storage:</strong> Free up space on your device and try again.<br/>
+              <strong>• Corrupted download:</strong> Delete the APK and re-download it from the official source.<br/>
+              <strong>• Existing conflicting install:</strong> If you have an older or different version installed, uninstall it first, then install the new one.<br/>
+              <strong>• Android version too old:</strong> MOD STORE requires Android 6.0 or higher. Check your Android version in Settings → About Phone.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-question" id="faq-q3" aria-controls="faq-a3">
+            GitHub sign-in isn't working. The browser opens but nothing happens after I authorize.
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer" id="faq-a3" role="region" aria-labelledby="faq-q3">
+            <div class="faq-answer__inner">
+              The OAuth redirect requires your device's browser to be able to redirect back to the MOD STORE app. Try these steps:
+              <br/><br/>
+              <strong>1. Check your default browser.</strong> Some third-party browsers block app redirects. Try setting Chrome or the default system browser as your default.<br/>
+              <strong>2. Clear browser cache.</strong> Go to Settings → Apps → [Your Browser] → Storage → Clear Cache.<br/>
+              <strong>3. Restart the app.</strong> Force-stop MOD STORE and try signing in again.<br/>
+              <strong>4. Check internet connectivity.</strong> The OAuth callback requires an active connection both in the browser and in the app simultaneously.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-question" id="faq-q4" aria-controls="faq-a4">
+            My favorites or library aren't showing up after I signed in on a different device.
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer" id="faq-a4" role="region" aria-labelledby="faq-q4">
+            <div class="faq-answer__inner">
+              Make sure you're signed in with the <strong>same GitHub account</strong> on both devices. Your library is tied to your specific GitHub user ID. If the accounts match, try signing out and signing back in to force a data refresh. A stable internet connection is required for sync to work.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-question" id="faq-q5" aria-controls="faq-a5">
+            Is MOD STORE available on iOS or as a web app?
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer" id="faq-a5" role="region" aria-labelledby="faq-q5">
+            <div class="faq-answer__inner">
+              MOD STORE is currently an <strong>Android-only application</strong>. There is no iOS version or web-based version at this time. The app can be sideloaded onto Android TV and Smart TV devices that run Android as their OS.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-question" id="faq-q6" aria-controls="faq-a6">
+            How do I update MOD STORE to the latest version?
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer" id="faq-a6" role="region" aria-labelledby="faq-q6">
+            <div class="faq-answer__inner">
+              Since MOD STORE is distributed as an APK outside the Play Store, updates are manual. Visit the official download page or the GitHub Releases page to check for newer versions. Download the latest APK and install it over the existing version — your data and sign-in will be preserved.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+</div><!-- /.docs-page -->
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════════════════════════ -->
+<footer class="footer" aria-label="Site footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a href="index.html" class="footer__logo" id="footer-logo">
+          <div class="nav__logo-icon" aria-hidden="true">M</div>
+          MOD STORE
+        </a>
+        <p class="footer__tagline">
+          The ultimate Android client for discovering, searching, and managing PC, TV, and Android applications.
+        </p>
+      </div>
+      <div>
+        <p class="footer__col-title">Product</p>
+        <ul class="footer__links" role="list">
+          <li><a href="index.html#features" class="footer__link" id="footer-features">Features</a></li>
+          <li><a href="index.html#showcase" class="footer__link" id="footer-showcase">Showcase</a></li>
+          <li><a href="index.html#download" class="footer__link" id="footer-download">Download</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer__col-title">Documentation</p>
+        <ul class="footer__links" role="list">
+          <li><a href="#getting-started" class="footer__link" id="footer-start">Getting Started</a></li>
+          <li><a href="#authentication" class="footer__link" id="footer-auth">GitHub Auth</a></li>
+          <li><a href="#navigation" class="footer__link" id="footer-nav">Navigation Guide</a></li>
+          <li><a href="#faq" class="footer__link" id="footer-faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer__col-title">Legal</p>
+        <ul class="footer__links" role="list">
+          <li><a href="privacy.html" class="footer__link" id="footer-privacy">Privacy Policy</a></li>
+          <li><a href="https://github.com/Developer-For-Git" target="_blank" rel="noopener" class="footer__link" id="footer-github">GitHub ↗</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>&copy; 2025 MOD STORE. All rights reserved.</span>
+      <span>Built with ❤️ for the Android community.</span>
+    </div>
+  </div>
+</footer>
+
+
+<script src="assets/js/nav.js"></script>
+<script src="assets/js/docs.js"></script>
+</body>
+</html>
