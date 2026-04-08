@@ -834,3 +834,88 @@ h1, h2, h3, h4, h5, h6 {
     height: 20px;
   }
 }
+
+/* ── Custom Cursor ───────────────────────────────────────────── */
+body {
+  cursor: none; /* Hide default cursor */
+}
+
+/* Ensure links and buttons don't show the default hand pointer either */
+a, button, input, textarea, select {
+  cursor: none !important;
+}
+
+.custom-cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  background-color: var(--primary);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99999;
+  transform: translate(-50%, -50%);
+  transition: width 0.2s ease, height 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+  will-change: transform, width, height;
+  border: 2px solid transparent;
+}
+
+.custom-cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 32px;
+  height: 32px;
+  border: 2px solid var(--primary-light);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99998;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), height 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), border-color 0.3s, background-color 0.3s, backdrop-filter 0.3s, opacity 0.3s;
+  will-change: transform, width, height;
+}
+
+.custom-cursor-dot.hovered {
+  width: 14px;
+  height: 14px;
+  background-color: transparent;
+  border-color: var(--text-primary);
+}
+
+.custom-cursor-ring.hovered {
+  width: 56px;
+  height: 56px;
+  border-color: transparent;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.custom-cursor-dot.clicking {
+  width: 6px;
+  height: 6px;
+  background-color: white;
+  border-color: transparent;
+  transition: width 0.1s, height 0.1s, background-color 0.1s;
+}
+
+.custom-cursor-ring.clicking {
+  width: 24px;
+  height: 24px;
+  border-color: var(--primary-light);
+  background-color: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  transition: width 0.1s, height 0.1s, border-color 0.1s;
+}
+
+/* Hide custom cursor on touch devices or small screens */
+@media (max-width: 768px), (pointer: coarse) {
+  .custom-cursor-dot, .custom-cursor-ring {
+    display: none !important;
+  }
+  body, a, button, input, textarea, select {
+    cursor: auto !important;
+  }
+}

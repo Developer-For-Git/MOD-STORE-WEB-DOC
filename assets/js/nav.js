@@ -118,11 +118,80 @@
     });
   }
 
+  // ── Custom Cursor ──────────────────────────────────────────
+  function initCustomCursor() {
+    if (window.matchMedia("(pointer: coarse)").matches) return;
+
+    const dot = document.createElement('div');
+    dot.className = 'custom-cursor-dot';
+    
+    const ring = document.createElement('div');
+    ring.className = 'custom-cursor-ring';
+    
+    document.body.appendChild(dot);
+    document.body.appendChild(ring);
+
+    let mouseX = window.innerWidth / 2;
+    let mouseY = window.innerHeight / 2;
+    let dotX = mouseX;
+    let dotY = mouseY;
+    let ringX = mouseX;
+    let ringY = mouseY;
+
+    document.addEventListener('mousemove', function(e) {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+    });
+
+    document.addEventListener('mousedown', function() {
+      dot.classList.add('clicking');
+      ring.classList.add('clicking');
+    });
+
+    document.addEventListener('mouseup', function() {
+      dot.classList.remove('clicking');
+      ring.classList.remove('clicking');
+    });
+
+    function animateCursor() {
+      // Very fast spring for dot
+      dotX += (mouseX - dotX) * 0.6;
+      dotY += (mouseY - dotY) * 0.6;
+      // Slower spring for ring
+      ringX += (mouseX - ringX) * 0.15;
+      ringY += (mouseY - ringY) * 0.15;
+      
+      dot.style.transform = `translate(calc(${dotX}px - 50%), calc(${dotY}px - 50%))`;
+      ring.style.transform = `translate(calc(${ringX}px - 50%), calc(${ringY}px - 50%))`;
+      
+      requestAnimationFrame(animateCursor);
+    }
+    animateCursor();
+
+    // Hover effect on interactives
+    const interactives = document.querySelectorAll('a, button, input, select, textarea, .roadmap-dot, .feature-card, .btn');
+    
+    interactives.forEach(function(el) {
+      el.addEventListener('mouseenter', function() {
+        dot.classList.add('hovered');
+        ring.classList.add('hovered');
+      });
+      el.addEventListener('mouseleave', function() {
+        dot.classList.remove('hovered');
+        ring.classList.remove('hovered');
+      });
+    });
+  }
+
   // Initialize after DOM is fully loaded just in case
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initScrollToTop);
+    document.addEventListener('DOMContentLoaded', function() {
+      initScrollToTop();
+      initCustomCursor();
+    });
   } else {
     initScrollToTop();
+    initCustomCursor();
   }
 
 }());
